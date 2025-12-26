@@ -9,6 +9,6 @@ public class Controller {
 
     @GetMapping("/")
     public String print(){
-        return "Hello AWS !!! Hello World CI/CD pipeline working";
+        return "Hello AWS !!! Hello World CI/CD pipeline working and Webhook auto Trigger";
     }
 }
