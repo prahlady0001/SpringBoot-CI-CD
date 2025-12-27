@@ -12,7 +12,7 @@ public class Controller {
         return "VERSION = NEXT-DEPLOY";
     }
 
-    @GetMapping("/")
+    @GetMapping()
     public String home() {
         return "NEW VERSION DEPLOYED ✅";
     }
