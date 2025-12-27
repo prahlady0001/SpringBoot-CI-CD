@@ -9,7 +9,7 @@ public class Controller {
 
     @GetMapping("/version")
     public String version(){
-        return "VERSION = 27-Dec-NEW";
+        return "VERSION = NEXT-DEPLOY";
     }
 
     @GetMapping("/")
