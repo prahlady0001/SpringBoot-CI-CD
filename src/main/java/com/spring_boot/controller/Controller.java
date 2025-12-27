@@ -11,4 +11,9 @@ public class Controller {
     public String version(){
         return "VERSION = 27-Dec-NEW";
     }
+
+    @GetMapping("/")
+    public String home() {
+        return "NEW VERSION DEPLOYED ✅";
+    }
 }
