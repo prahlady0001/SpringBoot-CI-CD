@@ -7,13 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller {
 
-    @GetMapping("/version")
+    @GetMapping("/api/version")
     public String version(){
         return "VERSION = NEXT-DEPLOY";
-    }
-
-    @GetMapping()
-    public String home() {
-        return "NEW VERSION DEPLOYED ✅";
     }
 }
