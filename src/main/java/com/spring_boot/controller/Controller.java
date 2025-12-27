@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller {
 
-    @GetMapping("/")
-    public String print(){
-        return "CI/CD pipeline working and Webhook auto Trigger";
+    @GetMapping("/version")
+    public String version(){
+        return "VERSION = 27-Dec-NEW";
     }
 }

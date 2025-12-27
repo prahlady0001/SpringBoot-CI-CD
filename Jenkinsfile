@@ -68,11 +68,13 @@ pipeline {
             steps {
                 sshagent(credentials: [SSH_CRED]) {
                     sh """
-                    scp target/*.jar ec2-user@${APP_SERVER}:${TMP_DIR}/
+                    JAR_NAME=\$(ls target/*.jar | head -n 1)
+
+                    scp \$JAR_NAME ec2-user@${APP_SERVER}:${TMP_DIR}/myapp.jar
 
                     ssh ec2-user@${APP_SERVER} '
                       IDLE=\$(cat /tmp/idle_port)
-                      sudo cp ${TMP_DIR}/*.jar ${APP_DIR}/myapp-\${IDLE}.jar
+                      sudo cp ${TMP_DIR}/myapp.jar ${APP_DIR}/myapp-\${IDLE}.jar
                       sudo systemctl restart myapp@\${IDLE}
                     '
                     """
